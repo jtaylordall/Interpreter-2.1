@@ -1,0 +1,68 @@
+Dependency Graph
+R0:R2
+R1:R2
+R2:R0,R1
+
+Rule Evaluation
+SCC: R0,R1,R2
+rSize: 9
+inSize: 12
+z: 0
+g(A,B) :- f(A,B).
+  x='a', y='a'
+  x='m', y='m'
+  x='y', y='g'
+z: 1
+g(B,X) :- f(B,A),h(X,Y).
+  x='a', y='f'
+  x='a', y='k'
+  x='m', y='f'
+  x='m', y='k'
+  x='y', y='f'
+  x='y', y='k'
+z: 2
+f(A,B) :- h(A,X),g(Y,B).
+  A='f', B='a'
+  A='f', B='c'
+  A='f', B='f'
+  A='f', B='g'
+  A='f', B='i'
+  A='f', B='k'
+  A='f', B='m'
+  A='k', B='a'
+  A='k', B='c'
+  A='k', B='f'
+  A='k', B='g'
+  A='k', B='i'
+  A='k', B='k'
+  A='k', B='m'
+z: 3
+g(A,B) :- f(A,B).
+  x='f', y='a'
+  x='f', y='c'
+  x='f', y='f'
+  x='f', y='g'
+  x='f', y='i'
+  x='f', y='k'
+  x='f', y='m'
+  x='k', y='a'
+  x='k', y='c'
+  x='k', y='f'
+  x='k', y='g'
+  x='k', y='i'
+  x='k', y='k'
+  x='k', y='m'
+z: 4
+g(B,X) :- f(B,A),h(X,Y).
+z: 5
+f(A,B) :- h(A,X),g(Y,B).
+z: 6
+g(A,B) :- f(A,B).
+z: 7
+g(B,X) :- f(B,A),h(X,Y).
+z: 8
+f(A,B) :- h(A,X),g(Y,B).
+exited
+***************************
+3 passes: R0,R1,R2
+getstoend 0

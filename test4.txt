@@ -1,0 +1,21 @@
+Schemes:
+  A(x,y)
+  B(x,y)
+  C(x,y)
+  D(x,y)
+  E(x,y)
+  F(x,y)
+  G(x,y)
+
+Facts:
+  A('x','y').
+
+Rules:
+  A(X,Y):-B(X,Y),C(X,Y). 
+  B(X,Y):-A(X,Y),D(X,Y). 
+  B(X,Y):-B(Y,X).        
+  E(X,Y):-F(X,Y),G(X,Y). 
+  E(X,Y):-E(X,Y),F(X,Y). 
+
+Queries:
+  A(X,Y)?

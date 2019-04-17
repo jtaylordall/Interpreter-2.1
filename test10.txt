@@ -1,0 +1,30 @@
+Schemes:
+    f(A,B)
+    g(x,y)
+    h(a,b,c)
+    i(A)
+    j(B)
+Facts:
+    f('a','a').
+    f('b','c').
+    f('f','g').
+    f('y','g').
+    f('h','i').
+    f('k','l').
+    f('m','m').
+    i('a').
+    i('o').
+    j('a').
+    j('b').
+
+Rules:
+    g(A,B) :- f(A,B).
+    f(A,B) :- f(B,A).
+    h(a,b,c) :- i(a),j(a),i(b).
+    h(a,b,c) :- j(a),i(a),i(a).
+    h(a,b,c) :- i(a),j(b),i(c).
+
+Queries:
+    g(A,B)?
+    g(A,A)?
+    h(A,B,C)?
